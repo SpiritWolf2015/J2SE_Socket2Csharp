@@ -4,7 +4,7 @@ import java.io.BufferedOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-import socket_2_csharp.util.string.StringConverter2ByteArray;
+import socket_2_csharp.util.StringConverter2ByteArray;
 
 public class Sender2Csharp {
 
