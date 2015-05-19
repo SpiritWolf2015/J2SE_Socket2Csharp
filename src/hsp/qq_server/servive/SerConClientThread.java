@@ -1,6 +1,4 @@
-/**
- * 功能：是服务器和某个客户端的通信线程
- */
+
 package hsp.qq_server.servive;
 
 import hsp.qq_server.model.Message;
@@ -10,6 +8,10 @@ import java.util.*;
 import java.net.*;
 import java.io.*;
 
+
+/**
+ * 功能：是服务器和某个客户端的通信线程
+ */
 public class SerConClientThread extends Thread {
 
 	Socket s;
@@ -38,8 +40,7 @@ public class SerConClientThread extends Thread {
 				m.setGetter(onLineUserId);
 				oos.writeObject(m);
 			} catch (Exception e) {
-				e.printStackTrace();
-				// TODO: handle exception
+				e.printStackTrace();			
 			}
 
 		}
@@ -81,8 +82,7 @@ public class SerConClientThread extends Thread {
 				}
 
 			} catch (Exception e) {
-				e.printStackTrace();
-				// TODO: handle exception
+				e.printStackTrace();		
 			}
 
 		}
