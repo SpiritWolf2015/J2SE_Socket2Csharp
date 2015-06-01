@@ -8,7 +8,7 @@ import hsp.qq_server.model.User;
 import java.net.*;
 import java.io.*;
 
-import socket_2_csharp.util.StringConverter2ByteArray;
+import socket_2_csharp.util.StringConverter2ByteArrayUtil;
 
 /**
  * 这是qq服务器，它在监听，等待某个qq客户端，来连接
@@ -64,7 +64,7 @@ public class MyQqServer {
 					
 					BufferedOutputStream bos = new BufferedOutputStream(outputStream);
 //					 把字符串转为字节数组
-					byte[] buf = StringConverter2ByteArray.getBytes(m.getMesType(), "UTF-8");	
+					byte[] buf = StringConverter2ByteArrayUtil.getBytes(m.getMesType(), encode);	
 					bos.write(buf, 0, buf.length);
 					bos.flush();	
 					System.out.println("成功登陆");
@@ -75,10 +75,10 @@ public class MyQqServer {
 				
 
 					// 这里就单开一个线程，让该线程与该客户端保持通讯.
-//					SerConClientThread scct = new SerConClientThread(s);
-//					ManageClientThread.addClientThread(u.getUserId(), scct);
+					SerConClientThread scct = new SerConClientThread(s);
+					ManageClientThread.addClientThread(u.getUserId(), scct);
 					// 启动与该客户端通信的线程.
-//					scct.start();
+					scct.start();
 
 					// 并通知其它在线用户.
 //					scct.notifyOther(u.getUserId());

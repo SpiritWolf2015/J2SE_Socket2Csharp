@@ -21,7 +21,10 @@ public class SerConClientThread extends Thread {
 		this.s = s;
 	}
 
-	// 让该线程去通知其它用户
+	/**
+	 * 让该线程去通知其它用户
+	 * @param iam
+	 */
 	public void notifyOther(String iam) {
 		// 得到所有在线的人的线程
 		HashMap<String, SerConClientThread> hm = ManageClientThread.hm;

@@ -9,7 +9,7 @@ import java.nio.charset.Charset;
  * @author gzc
  *
  */
-public final class StringConverter2ByteArray {
+public final class StringConverter2ByteArrayUtil {
 	
 	//==============±àÂë=====================
 	

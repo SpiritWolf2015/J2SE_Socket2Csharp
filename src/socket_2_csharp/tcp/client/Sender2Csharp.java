@@ -4,7 +4,7 @@ import java.io.BufferedOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-import socket_2_csharp.util.StringConverter2ByteArray;
+import socket_2_csharp.util.StringConverter2ByteArrayUtil;
 
 public class Sender2Csharp {
 
@@ -42,7 +42,7 @@ class Sender {
 					
 					String str = "乃木板46" + j;	
 					// 把字符串转为字节数组
-					byte[] buf = StringConverter2ByteArray.getBytes(str.toCharArray(), "UTF-8");			
+					byte[] buf = StringConverter2ByteArrayUtil.getBytes(str.toCharArray(), "UTF-8");			
 					System.out.printf("字节数组的长度是%d\n", buf.length);
 					
 					// 往C#服务器发数据
